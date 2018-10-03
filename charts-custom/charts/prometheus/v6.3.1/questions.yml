@@ -161,6 +161,7 @@ questions:
   required: true
   label: Group node selector
   show_subquestion_if: true
+  subquestions:
   - variable: kubeStateMetrics.nodeSelector.group
     default: null
     description: "Custom node selector group label"
