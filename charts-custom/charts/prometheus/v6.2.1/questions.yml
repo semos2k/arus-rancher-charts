@@ -153,7 +153,7 @@ questions:
     type: string
     label: Node group label
 #	prometheus-kube-state-metrics
-- variable: kubeStateMetrics.nodeSelector
+- variable: kubeStateMetrics.customNodeSelector
   default: false
   description: "Allow to set a node selector of the form nodeSelector.group=value (Because of a limitation in rancher to handle array and object types)"
   group: "kubeStateMetrics Settings"
