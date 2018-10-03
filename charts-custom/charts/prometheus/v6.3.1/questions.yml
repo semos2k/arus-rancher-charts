@@ -151,7 +151,21 @@ questions:
     default: null
     description: "Custom node selector group label"
     type: string
-    label: Node group label      
+    label: Node group label
+#	prometheus-kube-state-metrics
+- variable: kubeStateMetrics.nodeSelector
+  default: false
+  description: "Allow to set a node selector of the form nodeSelector.group=value (Because of a limitation in rancher to handle array and object types)"
+  group: "kubeStateMetrics Settings"
+  type: boolean
+  required: true
+  label: Group node selector
+  show_subquestion_if: true
+  - variable: kubeStateMetrics.nodeSelector.group
+    default: null
+    description: "Custom node selector group label"
+    type: string
+    label: Node group label
 # grafana configurations
 - variable: grafana.enabled
   default: true
