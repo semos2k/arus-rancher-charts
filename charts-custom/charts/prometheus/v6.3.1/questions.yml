@@ -165,7 +165,9 @@ questions:
     default: null
     description: "Custom node selector group label"
     type: string
+    group: "kubeStateMetrics Settings"
     label: Node group label
+    required: true
 # grafana configurations
 - variable: grafana.enabled
   default: true
