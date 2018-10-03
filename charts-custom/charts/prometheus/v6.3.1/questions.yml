@@ -250,6 +250,22 @@ questions:
     description: "If undefined or set to null, using the default storageClass. Defaults to null."
     type: storageclass
     label: Storage Class for Grafana
+- variable: grafana.customNodeSelector
+  default: false
+  description: "Allow to set a node selector of the form nodeSelector.group=value (Because of a limitation in rancher to handle array and object types)"
+  group: "Grafana Settings"
+  type: boolean
+  required: true
+  label: Group node selector
+  show_subquestion_if: true
+  subquestions:
+  - variable: grafana.nodeSelector.group
+    default: null
+    description: "Custom node selector group label"
+    type: string
+    group: "Grafana Settings"
+    label: Node group label
+    required: true
 # alertmanager configurations
 - variable: alertmanager.enabled
   default: "true"
