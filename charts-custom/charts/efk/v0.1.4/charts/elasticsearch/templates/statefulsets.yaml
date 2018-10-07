@@ -115,10 +115,6 @@ spec:
         emptyDir: {}
   {{- else }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
-    {{- if .Values.nodeSelector }}
-      nodeSelector:
-{{ toYaml .Values.nodeSelector | indent 8 }}
-    {{- end }}
   volumeClaimTemplates:
   - metadata:
       name: {{ .Values.master.persistence.name }}
