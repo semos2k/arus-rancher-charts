@@ -116,7 +116,7 @@ questions:
   required: true
   subquestions:
   - variable: kibana.ingress.hosts[0]
-    default: "xip.io"
+    default: "kibana.arus.com.co"
     description: "Kibana server ingress hostname"
     type: hostname
     required: true
