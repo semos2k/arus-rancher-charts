@@ -23,7 +23,7 @@ spec:
 {{- end }}
   selector:
     app: {{ template "kibana.name" . }}
-    release: {{ .Release.Name }}
+    #release: {{ .Release.Name }}
 {{- if .Values.service.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.loadBalancerIP }}
 {{- end }}

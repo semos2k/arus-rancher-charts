@@ -17,7 +17,7 @@ spec:
     {{- end }}
       labels:
         app: {{ template "kibana.name" . }}
-        release: "{{ .Release.Name }}"
+        #release: "{{ .Release.Name }}"
     spec:
       containers:
       - name: {{ .Chart.Name }}
