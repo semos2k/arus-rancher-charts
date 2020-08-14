@@ -11,6 +11,9 @@ spec:
   podManagementPolicy: Parallel
   serviceName: {{ template "elasticsearch.fullname" . }}
   replicas: {{ .Values.master.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "elasticsearch.name" . }}
   template:
     metadata:
       labels:
