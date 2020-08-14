@@ -42,7 +42,7 @@ questions:
     label: Fluent-Bit Image Tag
 # elasticsearch settings
 - variable: elasticsearch.master.heapSize
-  default: "512m"
+  default: "2g"
   description: "The value depends on the amount of RAM available on your server"
   type: enum
   label: Elasticsearch JVM Heap Size
@@ -53,7 +53,7 @@ questions:
   - "1g" 
   - "2g"
 - variable: elasticsearch.master.service.type
-  default: "NodePort"
+  default: "ClusterIP"
   description: "Elasticsearch service type"
   type: enum
   label: Elasticsearch Service Type
@@ -63,7 +63,7 @@ questions:
   - "ClusterIP"
   - "NodePort"
 - variable: elasticsearch.master.replicas
-  default: 3
+  default: 1
   description: "Replicas of elasticsearch"
   type: int
   label: Replicas of elasticsearch
@@ -72,7 +72,7 @@ questions:
   min: 1
   max: 30
 - variable: elasticsearch.master.persistence.enabled
-  default: "false"
+  default: "true"
   description: "Enable persistent volume for elasticsearch"
   type: boolean
   required: true
@@ -81,18 +81,18 @@ questions:
   group: "elasticsearch"
   subquestions:
   - variable: elasticsearch.master.persistence.storageClass
-    default: ""
+    default: "local-storage-es"
     description: "If undefined or set to null, using the default StorageClass. Defaults to null."
     type: storageclass
     label: Storage Class for Elasticsearch
   - variable: elasticsearch.master.persistence.size
-    default: "10Gi"
+    default: "200Gi"
     description: "Elasticsearch persistent volume size"
     required: true
     type: string
     label: Elasticsearch Persistent Volume Size
 - variable: elasticsearch.customNodeSelector
-  default: false
+  default: true
   description: "Allow to set a node selector of the form nodeSelector.group=value (Because of a limitation in rancher to handle array and object types)"
   group: "elasticsearch"
   type: boolean
@@ -101,7 +101,7 @@ questions:
   show_subquestion_if: true
   subquestions:
   - variable: elasticsearch.nodeSelector.group
-    default: null
+    default: "monitoreo"
     description: "Custom node selector group label"
     type: string
     label: Node group label
@@ -122,7 +122,7 @@ questions:
     required: true
     label: Hostname
 - variable: kibana.customNodeSelector
-  default: false
+  default: true
   description: "Allow to set a node selector of the form nodeSelector.group=value (Because of a limitation in rancher to handle array and object types)"
   group: "Kibana"
   type: boolean
@@ -131,13 +131,13 @@ questions:
   show_subquestion_if: true
   subquestions:
   - variable: kibana.nodeSelector.group
-    default: null
+    default: "monitoreo"
     description: "Custom node selector group label"
     type: string
     label: Node group label
 # fluent-bit settings:
 - variable: fluent-bit.enabled
-  default: true
+  default: false
   group: "Fluent-Bit"
   description: "Enable fluent-bit, the Kubernetes log forwarder"
   type: boolean
