@@ -16,9 +16,9 @@ terminationGracePeriodSeconds: 30  # Duration in seconds a elasticsearch pod nee
 master:
   name: master
   exposeHttp: true
-  replicas: 3
+  replicas: 1
   minimum_master_nodes: "1"
-  heapSize: "512m"
+  heapSize: "2g"
   antiAffinity: "soft"
   resources:
     limits:
@@ -37,7 +37,7 @@ master:
   ##
   persistence:
     name: es-data
-    enabled: false
+    enabled: true
     ## data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -49,7 +49,7 @@ master:
     ##
     ## If you want to reuse an existing claim, you can pass the name of the PVC using
     ## the existingClaim variable
-    # existingClaim: your-claim
+    existingClaim: local-storage-es
     accessMode: ReadWriteOnce
     size: 10Gi
 
