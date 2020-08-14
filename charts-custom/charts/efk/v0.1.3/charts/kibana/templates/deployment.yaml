@@ -9,6 +9,9 @@ metadata:
   name: {{ template "kibana.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "kibana.name" . }}
   template:
     metadata:
     {{- if .Values.podAnnotations }}
