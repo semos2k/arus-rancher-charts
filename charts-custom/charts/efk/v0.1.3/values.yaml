@@ -17,13 +17,13 @@ elasticsearch:
   master:
     name: master
     exposeHttp: true
-    replicas: 3
+    replicas: 1
     minimum_master_nodes: "1"
-    heapSize: "512m"
+    heapSize: "2g"
     antiAffinity: "soft"
     resources:
       limits:
-        cpu: "1"
+        cpu: "2"
         # memory: "1024Mi"
       requests:
         cpu: "25m"
