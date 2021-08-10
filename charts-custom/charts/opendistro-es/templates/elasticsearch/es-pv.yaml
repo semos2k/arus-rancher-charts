@@ -1,0 +1,57 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: local-storage-es
+  namespace: {{ .Release.Namespace }}
+reclaimPolicy: Retain
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: es
+    release: es
+  name: es-data-elasticsearch-0
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      pvl: "pvl-es"
+  accessModes:
+    - ReadWriteMany
+  storageClassName: local-storage-es
+  resources:
+    requests:
+      storage: 50G
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-local-es
+  namespace: {{ .Release.Namespace }}
+  labels:
+    pvl: pvl-es
+spec:
+  capacity:
+    storage: 50G
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage-es
+  local:
+    path: /opt2/opendistro
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: group
+          operator: In
+          values:
+          - monitoreo  

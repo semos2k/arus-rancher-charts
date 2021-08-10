@@ -278,6 +278,7 @@ elasticsearch:
       ##   GKE, AWS & OpenStack)
       ##
       # storageClass: "-"
+      existingClaim: local-storage-es
       accessModes:
         - ReadWriteOnce
       size: 8Gi
@@ -364,6 +365,7 @@ elasticsearch:
       ##   GKE, AWS & OpenStack)
       ##
       # storageClass: "-"
+      existingClaim: local-storage-es
       accessModes:
         - ReadWriteOnce
       size: 8Gi
