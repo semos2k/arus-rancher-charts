@@ -447,7 +447,7 @@ elasticsearch:
       labels: {}
       path: /
       hosts:
-        - chart-example.local
+        - elasticsearch.local
       tls: []
       #  - secretName: chart-example-tls
       #    hosts:

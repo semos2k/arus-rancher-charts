@@ -21,3 +21,10 @@ questions:
   label: Ingress for kibana
   required: true
   group: "kibana"
+- variable: elasticsearch.client.ingress.enabled
+  default: "false"
+  description: ""
+  type: boolean
+  label: Ingress for elasticsearch client
+  required: true
+  group: "elasticsearch"
