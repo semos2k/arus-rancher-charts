@@ -14,3 +14,10 @@ questions:
   label: Elasticsearch Data persistence
   required: true
   group: "elasticsearch"
+- variable: kibana.ingress.enabled
+  default: "true"
+  description: ""
+  type: boolean
+  label: Ingress for kibana
+  required: true
+  group: "kibana"
