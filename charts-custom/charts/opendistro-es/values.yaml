@@ -296,7 +296,15 @@ elasticsearch:
     nodeSelector: {}
     tolerations: []
     ## Anti-affinity to disallow deploying client and master nodes on the same worker node
-    affinity: {}
+    affinity: 
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            key: group
+            operator: In
+            values: monitoreo
+
     #  podAntiAffinity:
     #    requiredDuringSchedulingIgnoredDuringExecution:
     #      - topologyKey: "kubernetes.io/hostname"
@@ -373,7 +381,14 @@ elasticsearch:
     nodeSelector: {}
     tolerations: []
     ## Anti-affinity to disallow deploying client and master nodes on the same worker node
-    affinity: {}
+    affinity: 
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            key: group
+            operator: In
+            values: monitoreo
     #  podAntiAffinity:
     #    preferredDuringSchedulingIgnoredDuringExecution:
     #      - weight: 1
@@ -445,7 +460,14 @@ elasticsearch:
     nodeSelector: {}
     tolerations: []
     ## Weighted anti-affinity to disallow deploying client node to the same worker node as master node
-    affinity: {}
+    affinity: 
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            key: group
+            operator: In
+            values: monitoreo
     #  podAntiAffinity:
     #    preferredDuringSchedulingIgnoredDuringExecution:
     #      - weight: 1
