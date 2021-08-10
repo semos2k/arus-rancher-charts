@@ -131,10 +131,10 @@ kibana:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          key: group
-          operator: In
-          values: 
-          - monitoreo
+          - key: group
+            operator: In
+            values: 
+            - monitoreo
 
   serviceAccount:
     ## Specifies whether a ServiceAccount should be created
@@ -309,10 +309,10 @@ elasticsearch:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
           - matchExpressions:
-            key: group
-            operator: In
-            values: 
-            - monitoreo
+            - key: group
+              operator: In
+              values: 
+              - monitoreo
 
     #  podAntiAffinity:
     #    requiredDuringSchedulingIgnoredDuringExecution:
@@ -395,10 +395,10 @@ elasticsearch:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
           - matchExpressions:
-            key: group
-            operator: In
-            values: 
-            - monitoreo
+            - key: group
+              operator: In
+              values: 
+              - monitoreo
     #  podAntiAffinity:
     #    preferredDuringSchedulingIgnoredDuringExecution:
     #      - weight: 1
@@ -475,10 +475,10 @@ elasticsearch:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
           - matchExpressions:
-            key: group
-            operator: In
-            values: 
-            - monitoreo
+            - key: group
+              operator: In
+              values: 
+              - monitoreo
     #  podAntiAffinity:
     #    preferredDuringSchedulingIgnoredDuringExecution:
     #      - weight: 1
