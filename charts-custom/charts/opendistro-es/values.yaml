@@ -126,7 +126,15 @@ kibana:
   ##
   tolerations: []
 
-  affinity: {}
+  affinity: 
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          key: group
+          operator: In
+          values: 
+          - monitoreo
 
   serviceAccount:
     ## Specifies whether a ServiceAccount should be created
@@ -303,7 +311,8 @@ elasticsearch:
           - matchExpressions:
             key: group
             operator: In
-            values: monitoreo
+            values: 
+            - monitoreo
 
     #  podAntiAffinity:
     #    requiredDuringSchedulingIgnoredDuringExecution:
@@ -388,7 +397,8 @@ elasticsearch:
           - matchExpressions:
             key: group
             operator: In
-            values: monitoreo
+            values: 
+            - monitoreo
     #  podAntiAffinity:
     #    preferredDuringSchedulingIgnoredDuringExecution:
     #      - weight: 1
@@ -467,7 +477,8 @@ elasticsearch:
           - matchExpressions:
             key: group
             operator: In
-            values: monitoreo
+            values: 
+            - monitoreo
     #  podAntiAffinity:
     #    preferredDuringSchedulingIgnoredDuringExecution:
     #      - weight: 1
