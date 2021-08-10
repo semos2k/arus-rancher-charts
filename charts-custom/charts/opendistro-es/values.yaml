@@ -268,7 +268,7 @@ elasticsearch:
       ## The subdirectory of the volume to mount to, useful in dev environments
       ## and one PV for multiple services.
       ##
-      subPath: ""
+      subPath: "master"
 
       ## Open Distro master Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
@@ -278,7 +278,7 @@ elasticsearch:
       ##   GKE, AWS & OpenStack)
       ##
       # storageClass: "-"
-      existingClaim: local-storage-es
+      existingClaim: es-data-elasticsearch-0
       accessModes:
         - ReadWriteOnce
       size: 8Gi
@@ -355,7 +355,7 @@ elasticsearch:
       ## The subdirectory of the volume to mount to, useful in dev environments
       ## and one PV for multiple services.
       ##
-      subPath: ""
+      subPath: "data"
 
       ## Open Distro master Persistent Volume Storage Class
       ## If defined, storageClassName: <storageClass>
@@ -365,7 +365,7 @@ elasticsearch:
       ##   GKE, AWS & OpenStack)
       ##
       # storageClass: "-"
-      existingClaim: local-storage-es
+      existingClaim: es-data-elasticsearch-0
       accessModes:
         - ReadWriteOnce
       size: 8Gi
