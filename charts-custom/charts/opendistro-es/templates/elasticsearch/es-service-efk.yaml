@@ -1,0 +1,19 @@
+# @formatter:off
+kind: Service
+apiVersion: v1
+metadata:
+  annotations:
+{{ toYaml .Values.elasticsearch.client.service.annotations | indent 4 }}
+  name: efk-elasticsearch
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+    - name: http
+      port: 9200
+  selector:
+  {{- if .Values.elasticsearch.client.dedicatedPod.enabled }}
+    role: client
+  {{- else }}
+    role: master
+  {{- end }}
+  type: {{ .Values.elasticsearch.client.service.type }}

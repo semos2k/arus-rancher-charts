@@ -443,7 +443,10 @@ elasticsearch:
       #  kubernetes.io/tls-acme: "true"
       #  # Depending on your Ingress Controller you may need to set one of the two below annotations to have NGINX call the backend using HTTPS
       #  nginx.org/ssl-services:"{{ template "opendistro-es.fullname" . }}-client-service"
-      #  nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+        nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
       labels: {}
       path: /
       hosts:

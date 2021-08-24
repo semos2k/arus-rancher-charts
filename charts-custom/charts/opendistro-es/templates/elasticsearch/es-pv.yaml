@@ -46,7 +46,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage-es
   local:
-    path: /opt2/opendistro
+    path: /data/monitoreo/elastic
   nodeAffinity:
     required:
       nodeSelectorTerms:
