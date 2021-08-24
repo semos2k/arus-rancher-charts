@@ -1,0 +1,30 @@
+questions:
+# elasticsearch settings
+#- variable: elasticsearch.master.persistence.enabled
+#  default: "true"
+#  description: ""
+#  type: boolean
+#  label: Elasticsearch Master persistence
+#  required: true
+#  group: "elasticsearch"
+#- variable: elasticsearch.data.persistence.enabled
+#  default: "true"
+#  description: ""
+#  type: boolean
+#  label: Elasticsearch Data persistence
+#  required: true
+#  group: "elasticsearch"
+#- variable: kibana.ingress.enabled
+#  default: "true"
+#  description: ""
+#  type: boolean
+#  label: Ingress for kibana
+#  required: true
+#  group: "kibana"
+#- variable: elasticsearch.client.ingress.enabled
+#  default: "false"
+#  description: ""
+#  type: boolean
+#  label: Ingress for elasticsearch client
+#  required: true
+#  group: "elasticsearch"
