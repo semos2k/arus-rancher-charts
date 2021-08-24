@@ -204,8 +204,8 @@ priorityClassName: ""
 
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
-nodeAffinity: 
-  requiredDuringSchedulingRequiredDuringExecution:
+nodeAffinity:   
+  requiredDuringSchedulingIgnoredDuringExecution:
     nodeSelectorTerms:
     - matchExpressions:
       - key: group

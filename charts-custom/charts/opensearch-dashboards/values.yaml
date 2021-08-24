@@ -144,7 +144,7 @@ tolerations: []
 
 affinity: 
   nodeAffinity: 
-    requiredDuringSchedulingRequiredDuringExecution:
+    requiredDuringSchedulingIgnoredDuringExecution:
       nodeSelectorTerms:
       - matchExpressions:
         - key: group
