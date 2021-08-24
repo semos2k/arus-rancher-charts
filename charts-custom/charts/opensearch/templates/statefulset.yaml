@@ -102,25 +102,18 @@ spec:
       nodeSelector:
 {{ toYaml . | indent 8 }}
       {{- end }}
-      {{- if .Values.nodeAffinity }}
       {{- if .Values.priorityClassName }}
       priorityClassName: {{ .Values.priorityClassName }}
       {{- end }}
       affinity:
-        podAffinity:
+        nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
+            nodeSelectorTerms:
+            - matchExpressions:
               - key: group
                 operator: In
-                values:
-                - monitoreo
-            topologyKey: "kubernetes.io/hostname"
-      {{- with .Values.nodeAffinity }}
-        nodeAffinity:
-{{ toYaml . | indent 10 }}
-      {{- end }}
-      {{- end }}
+                values: 
+                - monitoreo  
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriod }}
       volumes:
         {{- range .Values.secretMounts }}
