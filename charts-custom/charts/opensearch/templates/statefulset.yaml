@@ -102,7 +102,8 @@ spec:
       nodeSelector:
 {{ toYaml . | indent 8 }}
       {{- end }}
-      {{- if or (eq .Values.antiAffinity "hard") (eq .Values.antiAffinity "soft") .Values.nodeAffinity }}
+      #{{- if or (eq .Values.antiAffinity "hard") (eq .Values.antiAffinity "soft") .Values.nodeAffinity }}
+      {{- if .Values.nodeAffinity }}
       {{- if .Values.priorityClassName }}
       priorityClassName: {{ .Values.priorityClassName }}
       {{- end }}
