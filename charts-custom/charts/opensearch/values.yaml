@@ -10,8 +10,8 @@ masterService: "opensearch-cluster-master"
 # These will be set as environment variables. E.g. node.master=true
 roles:
   master: "true"
-  ingest: "false"
-  data: "false"
+  ingest: "true"
+  data: "true"
   remote_cluster_client: "true"
 
 replicas: 1
@@ -204,7 +204,14 @@ antiAffinity: "soft"
 
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
-nodeAffinity: {}
+nodeAffinity:   
+  requiredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: group
+        operator: In
+        values: 
+        - monitoreo
 
 # The default is to deploy all pods serially. By setting this to parallel all pods are started at
 # the same time when bootstrapping the cluster
