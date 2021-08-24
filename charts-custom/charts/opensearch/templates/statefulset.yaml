@@ -108,29 +108,29 @@ spec:
       {{- end }}
       affinity:
       {{- end }}
-      {{- if eq .Values.antiAffinity "hard" }}
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - "{{ template "opensearch.uname" .}}"
-            topologyKey: {{ .Values.antiAffinityTopologyKey }}
-      {{- else if eq .Values.antiAffinity "soft" }}
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            podAffinityTerm:
-              topologyKey: {{ .Values.antiAffinityTopologyKey }}
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - "{{ template "opensearch.uname" . }}"
-      {{- end }}
+      #{{- if eq .Values.antiAffinity "hard" }}
+      #  podAntiAffinity:
+      #    requiredDuringSchedulingIgnoredDuringExecution:
+      #    - labelSelector:
+      #        matchExpressions:
+      #        - key: app
+      #          operator: In
+      #          values:
+      #          - "{{ template "opensearch.uname" .}}"
+      #      topologyKey: {{ .Values.antiAffinityTopologyKey }}
+      #{{- else if eq .Values.antiAffinity "soft" }}
+      #  podAntiAffinity:
+      #    preferredDuringSchedulingIgnoredDuringExecution:
+      #    - weight: 1
+      #      podAffinityTerm:
+      #        topologyKey: {{ .Values.antiAffinityTopologyKey }}
+      #        labelSelector:
+      #          matchExpressions:
+      #          - key: app
+      #            operator: In
+      #            values:
+      #            - "{{ template "opensearch.uname" . }}"
+      #{{- end }}
       {{- with .Values.nodeAffinity }}
         nodeAffinity:
 {{ toYaml . | indent 10 }}
