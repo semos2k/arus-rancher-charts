@@ -14,13 +14,13 @@ questions:
 #  label: Elasticsearch Data persistence
 #  required: true
 #  group: "elasticsearch"
-#- variable: kibana.ingress.enabled
-#  default: "true"
-#  description: ""
-#  type: boolean
-#  label: Ingress for kibana
-#  required: true
-#  group: "kibana"
+- variable: ingress.enabled
+  default: "true"
+  description: ""
+  type: boolean
+  label: Ingress for kibana
+  required: true
+  group: "opensearch"
 #- variable: elasticsearch.client.ingress.enabled
 #  default: "false"
 #  description: ""

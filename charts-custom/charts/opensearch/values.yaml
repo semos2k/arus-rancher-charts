@@ -204,14 +204,14 @@ priorityClassName: ""
 
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
-nodeAffinity: {} 
-#  requiredDuringSchedulingRequiredDuringExecution:
-#    nodeSelectorTerms:
-#    - matchExpressions:
-#      - key: group
-#        operator: In
-#        values: 
-#        - monitoreo
+nodeAffinity: 
+  requiredDuringSchedulingRequiredDuringExecution:
+    nodeSelectorTerms:
+    - matchExpressions:
+      - key: group
+        operator: In
+        values: 
+        - monitoreo
 
 # The default is to deploy all pods serially. By setting this to parallel all pods are started at
 # the same time when bootstrapping the cluster
