@@ -18,7 +18,7 @@ questions:
   default: "true"
   description: ""
   type: boolean
-  label: Ingress for kibana
+  label: Ingress for opensearch
   required: true
   group: "opensearch"
 #- variable: elasticsearch.client.ingress.enabled
