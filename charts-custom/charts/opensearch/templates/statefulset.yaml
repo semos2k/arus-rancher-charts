@@ -107,6 +107,15 @@ spec:
       priorityClassName: {{ .Values.priorityClassName }}
       {{- end }}
       affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: group
+                operator: In
+                values:
+                - monitoreo
+            topologyKey: "kubernetes.io/hostname"
       {{- with .Values.nodeAffinity }}
         nodeAffinity:
 {{ toYaml . | indent 10 }}
