@@ -165,10 +165,11 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "-"
+  storageClass: "local-storage-es"
+  #existingClaim: es-data-elasticsearch-0
   accessModes:
     - ReadWriteOnce
-  size: 8Gi
+  size: 50Gi
   annotations: {}
 
 extraVolumes: []
