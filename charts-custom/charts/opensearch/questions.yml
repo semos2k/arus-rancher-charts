@@ -7,13 +7,13 @@ questions:
 #  label: Elasticsearch Master persistence
 #  required: true
 #  group: "elasticsearch"
-#- variable: elasticsearch.data.persistence.enabled
-#  default: "true"
-#  description: ""
-#  type: boolean
-#  label: Elasticsearch Data persistence
-#  required: true
-#  group: "elasticsearch"
+- variable: persistence.enabled
+  default: "true"
+  description: ""
+  type: boolean
+  label: Elasticsearch Data persistence
+  required: true
+  group: "opensearch"
 - variable: ingress.enabled
   default: "true"
   description: ""
