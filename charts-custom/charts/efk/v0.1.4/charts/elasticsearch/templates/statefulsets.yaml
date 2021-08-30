@@ -113,29 +113,32 @@ spec:
   {{- if not .Values.master.persistence.enabled }}
       - name: es-data
         emptyDir: {}
+      - name: {{ .Values.master.persistence.name }}
+        persistentVolumeClaim:
+          claimName: es-data-elasticsearch-0
   {{- else }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
-  volumeClaimTemplates:
-  - metadata:
-      name: {{ .Values.master.persistence.name }}
-    spec:
-      selector:
-        matchLabels:
-          pvl: "pvl-es"
-      accessModes:
-        - {{ .Values.master.persistence.accessMode | quote }}
-    {{- if .Values.master.persistence.storageClass }}
-    {{- if (eq "-" .Values.master.persistence.storageClass) }}
-      storageClassName: ""
-    {{- else }}
-      storageClassName: "{{ .Values.master.persistence.storageClass }}"
-    {{- end }}
-    {{- end }}
-      resources:
-        requests:
-          storage: "{{ .Values.master.persistence.size }}"
+  #volumeClaimTemplates:
+  #- metadata:
+  #    name: {{ .Values.master.persistence.name }}
+  #  spec:
+  #    selector:
+  #      matchLabels:
+  #        pvl: "pvl-es"
+  #    accessModes:
+  #      - {{ .Values.master.persistence.accessMode | quote }}
+  #  {{- if .Values.master.persistence.storageClass }}
+  #  {{- if (eq "-" .Values.master.persistence.storageClass) }}
+  #    storageClassName: ""
+  #  {{- else }}
+  #    storageClassName: "{{ .Values.master.persistence.storageClass }}"
+  #  {{- end }}
+  #  {{- end }}
+  #    resources:
+  #      requests:
+  #        storage: "{{ .Values.master.persistence.size }}"
   {{ end }}
