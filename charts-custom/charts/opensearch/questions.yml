@@ -14,6 +14,20 @@ questions:
   label: Elasticsearch Data persistence
   required: true
   group: "opensearch"
+#- variable: elasticsearch.master.replicas
+#  default: 10
+#  description: "Replicas of elasticsearch"
+#  type: int
+#  label: Replicas of elasticsearch
+#  required: true
+#  group: "opensearch"
+#  min: 1
+#  max: 30
+- variable: persistence.size
+  default: "10Gi"
+  description: "Size of persistence"
+  type: string
+  label: Size of Persistence 
 - variable: ingress.enabled
   default: "true"
   description: ""
@@ -21,6 +35,7 @@ questions:
   label: Ingress for opensearch
   required: true
   group: "opensearch"
+
 #- variable: elasticsearch.client.ingress.enabled
 #  default: "false"
 #  description: ""
