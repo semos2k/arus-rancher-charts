@@ -15,7 +15,7 @@ metadata:
   labels:
     app: es
     release: es
-  name: es-data-elasticsearch-0
+  name: opensearch-cluster-master-opensearch-cluster-master-0
   namespace: {{ .Release.Namespace | quote }}
 spec:
   selector:
