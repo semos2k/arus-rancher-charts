@@ -26,7 +26,7 @@ spec:
   storageClassName: local-storage-es
   resources:
     requests:
-      storage: 50G
+      storage: {{ .Values.persistence.size | quote }}
 
 ---
 
@@ -39,7 +39,7 @@ metadata:
     pvl: pvl-es
 spec:
   capacity:
-    storage: 50G
+    storage: {{ .Values.persistence.size | quote }}
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
