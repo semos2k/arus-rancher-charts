@@ -123,6 +123,9 @@ spec:
   - metadata:
       name: {{ .Values.master.persistence.name }}
     spec:
+      selector:
+        matchLabels:
+          pvl: "pvl-es"
       accessModes:
         - {{ .Values.master.persistence.accessMode | quote }}
     {{- if .Values.master.persistence.storageClass }}
