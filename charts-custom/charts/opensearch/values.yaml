@@ -272,7 +272,7 @@ securityConfig:
   config:
     securityConfigSecret: os-secret
     data: 
-      roles.yml: |
+      roles.yml: |-
         fluentbit:
           reserved: false
           hidden: false
@@ -298,7 +298,7 @@ securityConfig:
       # 
       # 
       # rolesMapping.yml: |-
-    # tenants.yml: |-
+      # tenants.yml: |-
 
 # How long to wait for opensearch to stop gracefully
 terminationGracePeriod: 120
