@@ -272,7 +272,7 @@ securityConfig:
   config:
     securityConfigSecret: os-secret
     data: 
-      roles.yml: |-
+      roles.yml: |
         fluentbit:
           reserved: false
           hidden: false
