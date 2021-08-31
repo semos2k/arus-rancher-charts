@@ -165,10 +165,10 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "local-storage-es"
+  #storageClass: "local-storage-es"
   #existingClaim: es-data-elasticsearch-0
-  accessModes:
-    - ReadWriteOnce
+  #accessModes:
+  #  - ReadWriteOnce
   size: 50Gi
   annotations: {}
 
@@ -271,10 +271,32 @@ securityConfig:
   #Note that this is an alternative to the above secrets and shouldn't be used if the above secrets are used
   config:
     securityConfigSecret:
-    data: {}
-      # config.yml: |-
+    data: 
+      roles.yml: |-
+        fluentbit:
+          reserved: false
+          hidden: false
+          cluster_permissions:
+          - "cluster_monitor"
+          - "cluster_composite_ops"
+          - "indices:admin/template/get"
+          - "indices:admin/template/put"
+          - "cluster:admin/ingest/pipeline/put"
+          - "cluster:admin/ingest/pipeline/get"
+          index_permissions:
+          - index_patterns:
+            - "fluentbit-*"
+            allowed_actions:
+            - "crud"
+            - "create_index"
+          static: false
+        _meta:
+          type: "roles"
+          config_version: 2
       # internal_users.yml: |-
-      # roles.yml: |-
+      # config.yml: |-
+      # 
+      # 
       # rolesMapping.yml: |-
     # tenants.yml: |-
 
