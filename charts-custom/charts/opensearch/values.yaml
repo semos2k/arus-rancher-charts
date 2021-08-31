@@ -265,35 +265,35 @@ securityConfig:
   actionGroupsSecret:
   configSecret:
   internalUsersSecret:
-  rolesSecret:
+  rolesSecret: arus-config
   rolesMappingSecret:
   tenantsSecret:
   #The following option simplifies securityConfig by using a single secret and specifying the respective secrets in the corresponding files instead of creating different secrets for config,internal users, roles, roles mapping and tenants
   #Note that this is an alternative to the above secrets and shouldn't be used if the above secrets are used
   config:
-    securityConfigSecret: os-secret
+    securityConfigSecret:
     data: 
-      roles.yml: |-
-        fluentbit:
-          reserved: false
-          hidden: false
-          cluster_permissions:
-          - "cluster_monitor"
-          - "cluster_composite_ops"
-          - "indices:admin/template/get"
-          - "indices:admin/template/put"
-          - "cluster:admin/ingest/pipeline/put"
-          - "cluster:admin/ingest/pipeline/get"
-          index_permissions:
-          - index_patterns:
-            - "fluentbit-*"
-            allowed_actions:
-            - "crud"
-            - "create_index"
-          static: false
-        _meta:
-          type: "roles"
-          config_version: 2
+      #roles.yml: |-
+      #  fluentbit:
+      #    reserved: false
+      #    hidden: false
+      #    cluster_permissions:
+      #    - "cluster_monitor"
+      #    - "cluster_composite_ops"
+      #    - "indices:admin/template/get"
+      #    - "indices:admin/template/put"
+      #    - "cluster:admin/ingest/pipeline/put"
+      #    - "cluster:admin/ingest/pipeline/get"
+      #    index_permissions:
+      #    - index_patterns:
+      #      - "fluentbit-*"
+      #      allowed_actions:
+      #      - "crud"
+      #      - "create_index"
+      #    static: false
+      #  _meta:
+      #    type: "roles"
+      #    config_version: 2
       # internal_users.yml: |-
       # config.yml: |-
       # 
