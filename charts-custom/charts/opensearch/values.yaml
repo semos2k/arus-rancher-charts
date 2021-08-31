@@ -263,7 +263,7 @@ securityConfig:
   #path: "/usr/share/elasticsearch/plugins/opendistro_security/securityconfig"
   path: "/usr/share/opensearch/plugins/opensearch-security/securityconfig"
   actionGroupsSecret: arus-config
-  configSecret: arus-config
+  configSecret: 
   internalUsersSecret: arus-config
   rolesSecret: arus-config
   rolesMappingSecret: arus-config
