@@ -35,6 +35,13 @@ questions:
   label: Ingress for opensearch
   required: true
   group: "opensearch"
+- variable: securityConfig.enabled
+  default: "true"
+  description: ""
+  type: boolean
+  label: Security for opensearch
+  required: true
+  group: "opensearch"
 
 #- variable: elasticsearch.client.ingress.enabled
 #  default: "false"
