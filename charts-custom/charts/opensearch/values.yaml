@@ -260,7 +260,8 @@ securityContext:
 
 securityConfig:
   enabled: true
-  path: "/usr/share/elasticsearch/plugins/opendistro_security/securityconfig"
+  #path: "/usr/share/elasticsearch/plugins/opendistro_security/securityconfig"
+  path: "/usr/share/opensearch/plugins/opensearch-security/securityconfig"
   actionGroupsSecret:
   configSecret:
   internalUsersSecret:
