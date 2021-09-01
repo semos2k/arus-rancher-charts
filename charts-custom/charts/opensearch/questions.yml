@@ -42,6 +42,38 @@ questions:
   label: Security for opensearch
   required: true
   group: "opensearch"
+  show_subquestion_if: true
+  subquestions:
+  - variable: securityConfig.actionGroupsSecret
+    default: ""
+    description: "actionGroupsSecret"
+    type: string
+    label: Action Groups Secret
+  - variable: securityConfig.internalUsersSecret
+    default: ""
+    description: "internalUsersSecret"
+    type: string
+    label: Internal Users Secret
+  - variable: securityConfig.rolesSecret
+    default: ""
+    description: "rolesSecret"
+    type: string
+    label: Roles Secret
+  - variable: securityConfig.rolesMappingSecret
+    default: ""
+    description: "rolesMappingSecret"
+    type: string
+    label: Roles Mapping Secret
+  - variable: securityConfig.configSecret
+    default: ""
+    description: "configSecret"
+    type: string
+    label: Config Secret
+  - variable: securityConfig.tenantsSecret
+    default: ""
+    description: "tenantsSecret"
+    type: string
+    label: Tenants Secret
 
 #- variable: elasticsearch.client.ingress.enabled
 #  default: "false"
