@@ -50,17 +50,17 @@ questions:
     type: string
     label: Action Groups Secret
   - variable: securityConfig.internalUsersSecret
-    default: ""
+    default: "arus-config"
     description: "internalUsersSecret"
     type: string
     label: Internal Users Secret
   - variable: securityConfig.rolesSecret
-    default: ""
+    default: "arus-config"
     description: "rolesSecret"
     type: string
     label: Roles Secret
   - variable: securityConfig.rolesMappingSecret
-    default: ""
+    default: "arus-config"
     description: "rolesMappingSecret"
     type: string
     label: Roles Mapping Secret
