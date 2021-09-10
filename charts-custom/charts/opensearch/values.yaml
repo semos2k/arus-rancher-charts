@@ -104,7 +104,7 @@ podAnnotations: {}
 # additionals labels
 labels: {}
 
-esJavaOpts: "-Xmx1024M -Xms1024M"
+esJavaOpts: "-Xmx512M -Xms512M"
 
 resources:
   requests:
