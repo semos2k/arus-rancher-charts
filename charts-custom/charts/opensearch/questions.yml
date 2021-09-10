@@ -35,6 +35,11 @@ questions:
   label: Ingress for opensearch
   required: true
   group: "opensearch"
+- variable: esJavaOpts
+  default: "-Xmx512M -Xms512M"
+  description: "Size of memory or JVM options "
+  type: string
+  label: JVM Options 
 - variable: securityConfig.enabled
   default: "true"
   description: ""
