@@ -9,7 +9,7 @@ opensearchHosts: "http://opensearch-cluster-master:9200"
 replicaCount: 1
 
 image: "opensearchproject/opensearch-dashboards"
-imageTag: "1.0.1"
+imageTag: "1.0.0"
 imagePullPolicy: "IfNotPresent"
 
 imagePullSecrets: []
