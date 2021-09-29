@@ -70,7 +70,7 @@ questions:
     type: string
     label: Roles Mapping Secret
   - variable: securityConfig.configSecret
-    default: ""
+    default: "arus-config"
     description: "configSecret"
     type: string
     label: Config Secret
