@@ -29,7 +29,6 @@ spec:
     {{- end }}
   {{- end }}
   rules:
-  {{- if semverCompare ">=1.19" .Capabilities.KubeVersion.Version -}}
     {{- range .Values.ingress.hosts }}
     - host: {{ .host | quote }}
       http:
@@ -44,17 +43,4 @@ spec:
                   number: {{ $svcPort }}
           {{- end }}
     {{- end }}
-  {{- else -}}
-    {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
-      http:
-        paths:
-          {{- range .paths }}
-          - path: {{ .path }}
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-          {{- end }}
-    {{- end }}
-  {{- end }}
   {{- end }}
