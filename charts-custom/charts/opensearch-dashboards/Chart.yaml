@@ -1,4 +1,4 @@
-apiVersion: v2
+apiVersion: v1
 name: opensearch-dashboards
 description: A Helm chart for OpenSearch Dashboards
 
