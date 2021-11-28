@@ -60,7 +60,7 @@ config:
             - CN=kirk,OU=client,O=client,L=test, C=de
         audit.type: internal_opensearch
         enable_snapshot_restore_privilege: true
-        check_snapshot_restore_write_privileges: true
+        check_snapshot_restore_write_privileges: false
         restapi:
           roles_enabled: ["all_access", "security_rest_api_access"]
         system_indices:
@@ -106,12 +106,15 @@ podAnnotations: {}
 # additionals labels
 labels: {}
 
-esJavaOpts: "-Xmx512M -Xms512M"
+#esJavaOpts: "-Xmx512M -Xms512M"
+esJavaOpts: "-Djava.net.preferIPv4Stack=true -Xms6g -Xmx6g"
 
 resources:
   requests:
-    cpu: "1000m"
-    memory: "100Mi"
+    cpu: "100m"
+    memory: "7Gi"
+  limits:
+    cpu: "4"
 
 initResources: {}
   # limits:
