@@ -1,0 +1,224 @@
+PUT _plugins/_security/api/internalusers/sergio.orrego@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["admin"],
+   "attributes": {
+       "fullName": "Sergio de Jesus Orrego Toro"
+   }
+}
+PUT _plugins/_security/api/internalusers/juan.carvajalr@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["admin"],
+   "attributes": {
+       "fullName": "Juan Pablo Carvajal Restrepo"
+   }
+}
+PUT _plugins/_security/api/internalusers/ana.castano@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simpleseguridad"],
+   "attributes": {
+       "fullName": "Ana Catalina Castaño Mejia"
+   }
+}
+PUT _plugins/_security/api/internalusers/john.arias@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simpleseguridad"],
+   "attributes": {
+       "fullName": "Jhon William Arias Guisao"
+   }
+}
+PUT _plugins/_security/api/internalusers/elizabeth.londono@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Elizabeth Londono Monsalve"
+   }
+}
+PUT _plugins/_security/api/internalusers/betsy.varon@pagosimple.com
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Betsy Katherine Varon Gamez"
+   }
+}
+PUT _plugins/_security/api/internalusers/john.romero@pagosimple.com
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "John Edwin Romero Barrera"
+   }
+}
+PUT _plugins/_security/api/internalusers/sebastian.torres@pagosimple.com
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Sebastian Alfonso Torres Galindo"
+   }
+}
+PUT _plugins/_security/api/internalusers/yeison.parra@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Yeison Camilo Parra Betancur"
+   }
+}
+PUT _plugins/_security/api/internalusers/jorge.yepes@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Jorge Hugo Yepes Velasquez"
+   }
+}
+PUT _plugins/_security/api/internalusers/luisa.acevedo@arus.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Luisa Fernanda Acevedo Velez"
+   }
+}
+PUT _plugins/_security/api/internalusers/pablo.manquillo@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplecliente"],
+   "attributes": {
+       "fullName": "Pablo Manquillo"
+   }
+}
+PUT _plugins/_security/api/internalusers/santiago.ramirez@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Santiago Ramírez"
+   }
+}
+PUT _plugins/_security/api/internalusers/anggie.santacoloma@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Anggie Nathally Santacoloma"
+   }
+}
+PUT _plugins/_security/api/internalusers/fabio.vasquez@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Fabio Vásquez"
+   }
+}
+PUT _plugins/_security/api/internalusers/maria.molina@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Maria Alejandra Molina"
+   }
+}
+PUT _plugins/_security/api/internalusers/juan.sandoval@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Juan Sandoval"
+   }
+}
+PUT _plugins/_security/api/internalusers/oscar.uribe@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Oscar Uribe"
+   }
+}
+PUT _plugins/_security/api/internalusers/diego.cardona@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Diego Cardona"
+   }
+}
+PUT _plugins/_security/api/internalusers/luis.navia@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Luis Navia"
+   }
+}
+PUT _plugins/_security/api/internalusers/sebastian.estrada@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Sebastián Estrada"
+   }
+}
+PUT _plugins/_security/api/internalusers/juan.vasquez@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Juan David Vasquez Rojas"
+   }
+}
+PUT _plugins/_security/api/internalusers/julian.pinilla@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Julián Camilo Pinilla León"
+   }
+}
+PUT _plugins/_security/api/internalusers/alejandro.torres@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Luis Alejandro Torres Barraza"
+   }
+}
+PUT _plugins/_security/api/internalusers/luisa.urrego@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Luisa Fernanda Urrego Vélez"
+   }
+}
+PUT _plugins/_security/api/internalusers/yefry.gomez@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Yefri Darío Gómez Gómez"
+   }
+}
+PUT _plugins/_security/api/internalusers/angel.marin@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Angel Ernesto Marin Castrillon"
+   }
+}
+PUT _plugins/_security/api/internalusers/sebastian.londono@ceiba.com.co
+{
+   "password": "123456",
+   "backend_roles": ["simplesoporte"],
+   "attributes": {
+       "fullName": "Sebastian Londoño Zapata"
+   }
+}
